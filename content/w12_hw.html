@@ -146,14 +146,15 @@ img.add_border {
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/gFcRzogAnew?si=PuWqv-XC9ow4DbVM" title="YouTube video player" width="560"></iframe></p>
 <p><a href="https://gist.githubusercontent.com/HYCCC41323104/c6b638247077a64f02cdc973fa0a7078/raw/a32002ad62b64eecc89e5f46a1ef1f7eded03886/w12.py">程式碼</a></p>
 <p><span>題目:請各組組員分別利用 </span><span>Brython 以及 Jupyter lab</span><span> 環境, 執行</span><a href="http://229.cycu.org/python_2025_lite.7z">可攜程式</a><span> notebook 目錄中的 </span><span>01_string_input_print.ipynb 至 10_for_search.ipynb</span><span> 筆記本程式, 完成後請將能在 Brython 執行的程式碼存入個人 </span><span>Gist</span><span> 後, 將各程式執行連結放入 w12_hw 網頁上. 最後請說明各範例中所使用的程式語法以及執行心得.</span></p>
-<p><span>第一題:</span></p>
+<p><span>第一題: </span></p>
+<p><span>01_string_input_print</span></p>
 <p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/50db845fa40988fe1ea9be84a006d54e/raw/2a76ca399b12f8580e84a8e2421bbba82c66ac07/w12.1.py">what's  your name?</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 提示使用者輸入名字，並將輸入的名字儲存到變數中
 name = input("What's your name?")
 
 # 提示使用者輸入來自的地方，並將輸入的地點儲存到變數中
 location = input("Where are you from?")</pre>
-<p>在程式中的<span>input()意思 ?</span><br/>在 Python 中，<code>input()</code> 是一個內建函數，用來從使用者那裡獲取輸入。它會顯示提示訊息，然後暫停程式的執行，直到使用者輸入一些內容並按下回車鍵。使用者輸入的內容會以字串（<code>string</code>）的形式返回。</p>
+<p><strong>在程式中的input()意思 ?<img alt="surprised" src="./../cmsimde/static/tinymce4/tinymce/plugins/emoticons/img/smiley-surprised.gif"/></strong><br/>在 Python 中，<code>input()</code> 是一個內建函數，用來從使用者那裡獲取輸入。它會顯示提示訊息，然後暫停程式的執行，直到使用者輸入一些內容並按下回車鍵。使用者輸入的內容會以字串（<code>string</code>）的形式返回。</p>
 <p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/50db845fa40988fe1ea9be84a006d54e/raw/c857966ba7aed421093a79e27fba51e3a6ac485a/w12.1.2.py">貓 </a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 打印第一行：一隻貓的耳朵和臉部上半部
 print (" /\_/\ ")
@@ -163,8 +164,50 @@ print ("&gt;^.^&lt; ")
 print (" / \ ")
 # 打印第四行：貓的身體部分，畫出四肢
 print (" (___)___") #（尾巴的部分也可以理解為向右延伸）</pre>
-<p><br/><img alt="" height="83" src="./../images/cat.png" width="74"/><br/><br/></p>
-<br />w11_hw << <a href='w11_hw.html'>Previous</a> <a href='w13.html'>Next</a> >> w13</div>
+<p><br/><img alt="" height="83" src="./../images/cat.png" width="74"/><br/><strong>在程式中的input()意思 ?<img alt="surprised" src="./../cmsimde/static/tinymce4/tinymce/plugins/emoticons/img/smiley-surprised.gif"/></strong></p>
+<div class="group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn">
+<div class="flex-col gap-1 md:gap-3">
+<div class="flex max-w-full flex-col flex-grow">
+<div class="min-h-8 text-message flex w-full flex-col items-end gap-2 whitespace-normal break-words text-start [.text-message+&amp;]:mt-5" data-message-author-role="assistant" data-message-id="e28c17ec-6f9b-40ab-b3b6-ffcc2efb2624" data-message-model-slug="gpt-4o" dir="auto">
+<div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]">
+<div class="markdown prose w-full break-words dark:prose-invert dark">
+<p>在python中，<code>print()</code>的主要作用是輸出資料到螢幕或其他輸出裝置。這通常用來顯示程式執行過程中的資訊、變數的值，或傳遞訊息給使用者，簡單說用於用於輸出文字、數值或變數的值。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>第二題:</p>
+<p>02_variables</p>
+<p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/50db845fa40988fe1ea9be84a006d54e/raw/71bbf853bbfb843dfbb863c8f76b80d67b7b05ca/w12.2.1.py">填寫名字</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false;tab-size:7" contenteditable="false"># 將字串 "Mia" 賦值給變數 first_name
+first_name = "Mia"
+
+# 將字串 "Albert" 賦值給變數 last_name
+last_name = "Albert"
+
+# 輸出變數 first_name 的值（即 "Mia"）
+print(first_name)
+
+# 輸出變數 last_name 的值（即 "Albert"）
+print(last_name)</pre>
+<p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/50db845fa40988fe1ea9be84a006d54e/raw/71bbf853bbfb843dfbb863c8f76b80d67b7b05ca/hw12.2.2.py">你最愛吃甚麼?</a><br/><br/></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 使用者輸入名字，將結果儲存到變數 name
+name = input("What's your name? ")
+
+# 使用者輸入最喜歡的食物，將結果儲存到變數 favorite_food
+favorite_food = input("What is your favorite food? ")
+
+# 輸出問候語，包含名字
+print("Hi! My name is " + name)
+
+# 輸出使用者最喜歡的食物
+print("My favorite food is " + favorite_food)
+
+# 輸出結合名字和最喜歡食物的句子
+print(name + "'s favorite food is " + favorite_food)</pre>
+<p>網頁會跳出問題，問你的名字和最愛吃的食物，可以是中文~<br/><br/></p><br />w11_hw << <a href='w11_hw.html'>Previous</a> <a href='w13.html'>Next</a> >> w13</div>
         
     <!-- footer -->
       <div class="container">
