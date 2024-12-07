@@ -130,7 +130,33 @@ print("My favorite food is " + favorite_food)
 
 # 輸出結合名字和最喜歡食物的句子
 print(name + "'s favorite food is " + favorite_food)</pre>
-<p><span style="background-color: #ff6600; color: #ffffff;">網頁會跳出問題，問你的名字和最愛吃的食物，可以是中文~</span><br/><br/></p><h2>w13</h2>
+<p><span style="background-color: #339966; color: #ffffff;">網頁會跳出問題，問你的名字和最愛吃的食物，可以是中文~</span></p>
+<p>第三題:</p>
+<p>03_list_if_in_eise</p>
+<p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/50db845fa40988fe1ea9be84a006d54e/raw/203ae5059b80438cdbe0f536d3e99a3e9d65b4b0/w12.3.py">身為書店老闆</a></p>
+<p>你有三本書(書庫)分別為"<span class="hljs-string">Learn python"</span>, <span class="hljs-string">"Python for all"</span>, <span class="hljs-string">"Intro to python"，客人只能選購你擁有的這三本書，所以我們要先詢問要買什麼書，如果要買的書不在這三本(書庫)裡頭，那就會輸出抱歉<img alt="cry" src="/static/tinymce4/tinymce/plugins/emoticons/img/smiley-cry.gif"/>的訊息，要的書在這三本書(書庫)裡，就會輸出出Yes!<img alt="tongue-out" src="/static/tinymce4/tinymce/plugins/emoticons/img/smiley-tongue-out.gif"/></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義一個包含書名的清單 programming_books
+programming_books = ["Learn python", "Python for all", "Intro to python"]
+
+# 輸出整個書籍清單
+print(programming_books)
+
+# 提示使用者輸入他們想要購買的書名，將結果儲存到變數 wanted_book
+wanted_book = input("Hi! What book would you like to buy? ")
+
+# 輸出使用者輸入的書名
+print(wanted_book)
+
+# 使用 if 判斷書名是否在書籍清單中
+if wanted_book in programming_books:
+# 如果書名在清單中，輸出確認訊息
+print("Yes, we sell it!")
+else:
+# 如果書名不在清單中，輸出抱歉訊息
+print("Sorry, we don't sell that book")</pre>
+<p><br/><br/></p>
+<p><span style="background-color: #ff6600; color: #ffffff;"></span></p>
+<p><span style="background-color: #ff6600; color: #ffffff;"></span></p><h2>w13</h2>
 <h3>w13_hw</h3>
 <p>
 <script src="/static/brython.js"></script>
