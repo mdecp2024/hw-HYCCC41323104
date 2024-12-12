@@ -154,103 +154,176 @@ print("Yes, we sell it!")
 else:
 # 如果書名不在清單中，輸出抱歉訊息
 print("Sorry, we don't sell that book")</pre>
-<h3><strong><code>if</code> 的作用</strong></h3>
+<p><strong><code>if</code> 的作用</strong></p>
 <ul>
 <li>用來檢查條件是否成立（True）。</li>
 <li>如果條件成立，執行對應的程式碼。</li>
 <li>如果條件不成立，直接跳過。</li>
 </ul>
-<h3><strong><code>else</code> 的作用</strong></h3>
+<p><strong><code>else</code> 的作用</strong></p>
 <ul>
 <li>和 <code>if</code> 搭配使用。</li>
 <li>當 <code>if</code> 條件不成立時，執行 <code>else</code> 裡的程式碼。</li>
 </ul>
 <p><br/><br/></p>
 <p><span style="background-color: #ff6600; color: #ffffff;"></span></p>
-<p><span style="background-color: #ff6600; color: #ffffff;"></span></p><h2>w13</h2>
+<p><span style="background-color: #ff6600; color: #ffffff;"></span></p>
+<h2>w13</h2>
 <h3>w13_hw</h3>
-<p>
-<script src="/static/brython.js"></script>
-<script src="/static/brython_stdlib.js"></script>
-</p>
-<!--啟動Brython-->
-<p>
-<script>
--window.onload=function(){
-brython({debug:1,pythonpath:['/static/','./../downloads/py/']});
-}
-</script>
-</p>
-<div id="brython_div1"></div>
-<p>
-<script type="text/python">
-from browser import html
+<p><span>請在下列圖形中的兩個正方形外圍, 以黑色畫筆畫圓, 並設法在各線條所圍成的封閉區域塗上不同顏色. 操作過程請拍攝影片, 並在頁面中列出作業心得.</span></p>
+<p><span><img alt="" height="121" src="/images/chrome_677uOcnTK5.png" width="118"/></span></p>
+<p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/f67524baaa449803385477cb3dd976f6/raw/d6f1318c573b1c38439ddde88f3a8470c9d4170c/w13.py">圖形的程式碼</a></p>
+<p><img alt="" height="120" src="/images/chrome_w2eqkfCxZe.png" width="136"/></p>
+<p>心得:</p>
+<p>影片:</p>
+<p>123</p>
+<pre class="brush:py;auto-links:false;toolbar:false;tab-size:9" contenteditable="false">from browser import html
 from browser import document as doc
-canvas = html.CANVAS(width=400,height=400)
+import math
+
+# 創建一個500x500像素的畫布
+canvas = html.CANVAS(width=500, height=500)
+
+# 把畫布加入到頁面的div元素中
 brython_div = doc["brython_div1"]
-brython_div <= canvas
-ctx=canvas.getContext("2d")
+brython_div &lt;= canvas
 
-ctx.lineWidth = 1
-ctx.strokeStyle =  'blue'
+# 獲取畫布的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 設置畫筆寬度
+ctx.lineWidth = 4
+
+# 設置混色模式為"screem"，這會讓新畫的顏色與舊顏色進行混合
+ctx.globalCompositeOperation = "screem"
+
+# 設置描邊顏色為黑色
+ctx.strokeStyle = 'black'
+
+# 繪製第一個圓形，分為四個顏色
+# 第一個圓段 (Turquoise 顏色)
 ctx.beginPath()
-ctx.moveTo(10,10)
-ctx.lineTo(100,100)
-ctx.stroke()
-ctx.lineWidth = 1
-ctx.strokeStyle =  'red'
-ctx.beginPath()
-ctx.moveTo(10,10)
-ctx.lineTo(10,100)
-ctx.stroke()
-ctx.lineWidth = 1
-ctx.strokeStyle =  'red'
-ctx.beginPath()
-ctx.moveTo(10,10)
-ctx.lineTo(100,10)
-ctx.stroke()
-ctx.lineWidth = 1
-ctx.strokeStyle =  'red'
-ctx.beginPath()
-ctx.moveTo(10,100)
-ctx.lineTo(100,100)
-ctx.stroke()
-ctx.lineWidth = 1
-ctx.strokeStyle =  'red'
-ctx.beginPath()
-ctx.moveTo(100,10)
-ctx.lineTo(100,100)
+ctx.arc(160, 160, 141, 0.25 * math.pi, 0.75 * math.pi)
+ctx.fillStyle = "Turquoise"
+ctx.fill()
 ctx.stroke()
 
-ctx.lineWidth = 1
-ctx.strokeStyle =  'red'
+# 第二個圓段 (pink 顏色)
 ctx.beginPath()
-ctx.moveTo(50,50)
-ctx.lineTo(50,150)
+ctx.arc(160, 160, 141, 0.75 * math.pi, 1.25 * math.pi)
+ctx.fillStyle = "pink"
+ctx.fill()
 ctx.stroke()
 
-ctx.lineWidth = 1
-ctx.strokeStyle =  'red'
+# 第三個圓段 (Lavender 顏色)
 ctx.beginPath()
-ctx.moveTo(50,50)
-ctx.lineTo(150,50)
+ctx.arc(160, 160, 141, 1.25 * math.pi, 1.75 * math.pi)
+ctx.fillStyle = "Lavender"
+ctx.fill()
 ctx.stroke()
 
-ctx.lineWidth = 1
-ctx.strokeStyle =  'red'
+# 第四個圓段 (LightCoral 顏色)
 ctx.beginPath()
-ctx.moveTo(50,150)
-ctx.lineTo(150,150)
+ctx.arc(160, 160, 141, 1.75 * math.pi, 0.25 * math.pi)
+ctx.fillStyle = "LightCoral "
+ctx.fill()
 ctx.stroke()
 
-ctx.lineWidth = 1
-ctx.strokeStyle =  'red'
+# 繪製第二個圓形，這個圓形也分為四個顏色
+# 第一個圓段 (BurlyWood 顏色)
 ctx.beginPath()
-ctx.moveTo(150,50)
-ctx.lineTo(150,150)
+ctx.arc(260, 260, 141, 1.25 * math.pi, 1.75 * math.pi)
+ctx.fillStyle = "BurlyWood "
+ctx.fill()
 ctx.stroke()
-</script>
-</p><h1>HW 2</h1>
+
+# 第二個圓段 (LightSkyBlue 顏色)
+ctx.beginPath()
+ctx.arc(260, 260, 141, 1.75 * math.pi, 0.25 * math.pi)
+ctx.fillStyle = "LightSkyBlue "
+ctx.fill()
+ctx.stroke()
+
+# 第三個圓段 (LavenderBlush 顏色)
+ctx.beginPath()
+ctx.arc(260, 260, 141, 0.25 * math.pi, 0.75 * math.pi)
+ctx.fillStyle = "LavenderBlush"
+ctx.fill()
+ctx.stroke()
+
+# 第四個圓段 (PeachPuff 顏色)
+ctx.beginPath()
+ctx.arc(260, 260, 141, 0.75 * math.pi, 1.25 * math.pi)
+ctx.fillStyle = "PeachPuff "
+ctx.fill()
+ctx.stroke()
+
+# 繪製紅色邊框的三角形，並用不同顏色填充
+# 第一個三角形 (LightSalmon 顏色)
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.moveTo(60, 60) # 三角形的起點
+ctx.lineTo(60, 260) # 連接到 (60, 260)
+ctx.lineTo(260, 260) # 連接到 (260, 260)
+ctx.fillStyle = "LightSalmon "
+ctx.fill()
+ctx.stroke()
+
+# 第二個三角形 (Honeydew 顏色)
+ctx.beginPath()
+ctx.moveTo(60, 60)
+ctx.lineTo(260, 60) # 連接到 (260, 60)
+ctx.lineTo(260, 260)
+ctx.fillStyle = "Honeydew"
+ctx.fill()
+ctx.stroke()
+
+# 第三個三角形 (LightBlue 顏色)
+ctx.beginPath()
+ctx.moveTo(160, 160)
+ctx.lineTo(360, 160) # 連接到 (360, 160)
+ctx.lineTo(360, 360)
+ctx.fillStyle = "LightBlue"
+ctx.fill()
+ctx.stroke()
+
+# 第四個三角形 (PaleGoldenRod 顏色)
+ctx.beginPath()
+ctx.moveTo(160, 160)
+ctx.lineTo(160, 360) # 連接到 (160, 360)
+ctx.lineTo(360, 360)
+ctx.fillStyle = "PaleGoldenRod"
+ctx.fill()
+ctx.stroke()
+
+# 繪製兩個重疊的小矩形
+# 第一個小矩形 (PaleVioletRed 顏色)
+ctx.beginPath()
+ctx.moveTo(160, 160)
+ctx.lineTo(160, 260) # 連接到 (160, 260)
+ctx.lineTo(260, 260)
+ctx.fillStyle = "PaleVioletRed"
+ctx.fill()
+ctx.stroke()
+
+# 第二個小矩形 (PaleGreen 顏色)
+ctx.beginPath()
+ctx.moveTo(160, 160)
+ctx.lineTo(260, 160) # 連接到 (260, 160)
+ctx.lineTo(260, 260)
+ctx.fillStyle = "PaleGreen"
+ctx.fill()
+ctx.stroke()
+
+# 繪製藍色的斜線
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(60, 60) # 斜線起點 (60, 60)
+ctx.lineTo(260, 260) # 斜線終點 (260, 260)
+ctx.stroke()</pre>
+<p><br/><br/></p>
+<p></p>
+<p></p><h1>HW 2</h1>
 <p><br/>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span> <br/>        Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
 <p>延續 HW 1 網頁資料整理與程式練習方法, 整理下列內容 (20%):PART 2: Introduction to lists and if/else statementsPART 3: Introduction to the for loop完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p>
