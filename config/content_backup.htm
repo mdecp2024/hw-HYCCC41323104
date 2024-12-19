@@ -602,16 +602,23 @@ total_sum += i
 
 # 輸出結果
 print("從 1 累加到 100 的總和是:", total_sum)</pre>
-<p><span style="background-color: #ccffff;">結果為 5050 ~</span></p>
-<p><span style="color: #99ccff;">Q:程式中這一段的意思?</span></p>
+<p><span style="background-color: #ccffff;">結果為 5050 <img alt="cool" src="/static/tinymce4/tinymce/plugins/emoticons/img/smiley-cool.gif"/></span></p>
+<p><strong>Q:程式中這一段的意思?</strong></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 使用 for 迴圈從 1 累加到 100
 for i in range(1, 101):
 total_sum += i</pre>
-<p><span style="color: #ff99cc;"><span style="color: #99ccff;">A:</span><br/></span></p>
-<p>把for i in range(1, 101): 分開介紹</p>
-<p><span style="background-color: #ccffff;">for i </span>表示使用一個變數 <span style="background-color: #ccffff;"><code>i</code></span> 來代表每一次循環中的當前數字。</p>
-<p><span style="background-color: #ccffff;">in range(1, 101)</span>中的<span style="background-color: #ccffff;"><code>range(1, 101)</code></span> 是一個生成數字的範圍，表示從 1 開始，到 100 結束。這段語法會創建一個數字序列，包含從 1 到 100 的所有整數。<span style="color: #ff0000;">注意，<code>range()</code> 的第二個參數 <code>101</code> 是「不包含」的，所以它不會包括 101 這個數字。</span></p>
-<p><span color="#ff0000">冒號則表示開始</span><span color="#ff0000">執行循環體內的程式碼。</span></p><h1>HW 2</h1>
+<p><strong>A:</strong></p>
+<p style="text-align: justify;"><strong>把 &lt;for i in range(1, 101): &gt;分開介紹</strong></p>
+<p style="text-align: justify;">for i 表示使用一個變數 <code>i</code> 來代表每一次循環中的當前數字。</p>
+<p style="text-align: justify;">in range(1, 101):</p>
+<ol style="text-align: justify;">
+<li><code>range(1, 101)</code> 是一個生成數字的範圍，表示從 1 開始，到 100 結束。這段語法會創建一個數字序列，包含從 1 到 100 的所有整數。</li>
+<li><span style="color: #ff0000;">注意，<code>range()</code> 的第二個參數 <code>101</code> 是「不包含」的，所以它不會包括 101 這個數字。</span></li>
+</ol>
+<p style="text-align: justify;"><span color="#ff0000">冒號則表示開始</span><span color="#ff0000">執行循環體內的程式碼。</span></p>
+<p style="text-align: justify;"><strong><span color="#ff0000">&lt;total_sum += i &gt;的意思</span></strong></p>
+<p style="text-align: justify;"><span color="#ff0000">把變數 <code>i</code> 的值加到 <code>total_sum</code> 裡，然後把結果再存回 <code>total_sum。total_sum 是 total_sum + i 的縮寫。</code></span></p>
+<p style="text-align: justify;"><span face="monospace" style="font-family: monospace; background-color: #999999; color: #ffffff;">!!! 所以在for i in range(1, 101)的迴圈中 1+2+...+100 後再存進 total_sum 裡面。!!!</span></p><h1>HW 2</h1>
 <p><br/>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span> <br/>        Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
 <p>延續 HW 1 網頁資料整理與程式練習方法, 整理下列內容 (20%):PART 2: Introduction to lists and if/else statementsPART 3: Introduction to the for loop完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p>

@@ -2,7 +2,7 @@
         <head>
         <title>cp_hw</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -141,23 +141,41 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='Attendance.html'>Next</a> >> Attendance<br /><h1>About</h1>
-<p>國立虎尾科技大學機械設計工程系</p>
-<p>National Formosa University</p>
-<p>Department of Mechanical Design Engineering</p>
-<p>cp2024 計算機程式</p>
-<p>課程教材:</p>
-<p style="padding-left: 30px;"><a href="https://blog.jupyter.org/introducing-learn-python-with-jupyter-11214f152159">Learn Python with Jupyter</a> (<a href="https://www.learnpythonwithjupyter.com/">site</a>, <a href="https://localhost:9445/downloads/learn_python_with_jupyter.pdf">ebook</a>)</p>
-<p style="padding-left: 30px;">教育版帳號 microsoftonline 登入點: <a href="https://login.microsoftonline.com/">https://login.microsoftonline.com/</a></p>
-<p>Teams 線上教學:</p>
-<p style="padding-left: 30px;">以 "學號@nfu.edu.tw" 登入 <a href="https://login.microsoftonline.com/">https://login.microsoftonline.com/</a> Office 365</p>
-<p style="padding-left: 30px;">Teams 團隊代碼: <span class="fui-Text ___vec8h90 fk6fouc f1pbo8a8 f1i3iumi figsok6 fpgzoln f1w7gpdv f6juhto f1mtd64y f1y7q3j9 f2jf649 foxqkq2" data-tid="join-team-code">ldodwua</span></p>
-<p>個人倉儲:<a href="https://github.com/mdecp2024/hw-HYCCC41323104">https://github.com/mdecp2024/hw-HYCCC41323104</a></p>
-<p>個人網站:<a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/index.html">https://mdecp2024.github.io/hw-HYCCC41323104/content/index.html</a></p>
-<p>其他資訊:</p>
-<p style="padding-left: 30px;"><a href="./../downloads/cd2023_pj3ag4_zmq_football_4.7.7z">cd2023_pj3ag4_zmq_football_4.7.7z</a></p>
-<p style="padding-left: 30px;"><a href="https://localhost:9446/downloads/cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z">cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z</a></p>
-<br /> <a href='Attendance.html'>Next</a> >> Attendance</div>
+    <div id="tipue_search_content">w14_hw << <a href='w14_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15</h1>
+<p>題目一:</p>
+<p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/74ac586cfb6c8d2d632989126cf0719f/raw/70dd5b2c7ac86be541797a6deccaf4b32b9a6c18/w15.1.py">從 1 累加到 100</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 初始化總和為 0
+total_sum = 0
+
+# 使用 for 迴圈從 1 累加到 100
+for i in range(1, 101):
+total_sum += i
+
+# 輸出結果
+print("從 1 累加到 100 的總和是:", total_sum)</pre>
+<p><span style="background-color: #ccffff;">結果為 5050 <img alt="cool" src="./../cmsimde/static/tinymce4/tinymce/plugins/emoticons/img/smiley-cool.gif"/></span></p>
+<p><strong>Q:程式中這一段的意思?</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 使用 for 迴圈從 1 累加到 100
+for i in range(1, 101):
+total_sum += i</pre>
+<p><strong>A:</strong></p>
+<p><strong>把 &lt;for i in range(1, 101): &gt;分開介紹</strong></p>
+<ul>
+<li style="text-align: justify;">for i 表示使用一個變數 <code>i</code> 來代表每一次循環中的當前數字。</li>
+<li style="text-align: justify;">in range(1, 101):</li>
+</ul>
+<ol style="text-align: justify; list-style-type: lower-roman;">
+<li><code>range(1, 101)</code> 是一個生成數字的範圍，表示從 1 開始，到 100 結束。這段語法會創建一個數字序列，包含從 1 到 100 的所有整數。</li>
+<li><span style="color: #ff0000;">注意，<code>range()</code> 的第二個參數 <code>101</code> 是「不包含」的，所以它不會包括 101 這個數字。</span></li>
+</ol>
+<ul>
+<li style="text-align: justify;"><span color="#ff0000">冒號則表示開始</span><span color="#ff0000">執行循環體內的程式碼。</span></li>
+</ul>
+<p style="text-align: justify;"><strong><span color="#ff0000">&lt;total_sum += i &gt;的意思</span></strong></p>
+<ul>
+<li style="text-align: justify;"><span color="#ff0000">把變數 <code>i</code> 的值加到 <code>total_sum</code> 裡，然後把結果再存回 <code>total_sum。total_sum 是 total_sum + i 的縮寫。</code></span></li>
+</ul>
+<p><span face="monospace" style="font-family: monospace; background-color: #999999; color: #ffffff;">!!! 所以在for i in range(1, 101)的迴圈中 1+2+...+100 後再存進 total_sum 裡面。!!!</span></p><br />w14_hw << <a href='w14_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
