@@ -676,7 +676,8 @@ print("從 1 累加到 100 的偶數總和是:", result)</pre>
 <li><code>%</code> 是 <strong>模數運算符</strong>，也叫做 <strong>取餘數</strong>。它用來計算一個數字除以另一個數字後，剩下的餘數。</li>
 </ul>
 <p><span><strong>結果為:</strong>從 1 累加到 100 的偶數總和是: 2550</span><img alt="cool" src="/static/tinymce4/tinymce/plugins/emoticons/img/smiley-cool.gif"/></p>
-<p>4.<br/><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/74ac586cfb6c8d2d632989126cf0719f/raw/15f86eb3113fed7db558b845016ed8ca8f23cd08/w15.4.py">add_avoid_8 </a></p>
+<p>4.</p>
+<p>1~100中避開有數字8的數字,例如 8，18，28，....。<br/><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/74ac586cfb6c8d2d632989126cf0719f/raw/15f86eb3113fed7db558b845016ed8ca8f23cd08/w15.4.py">add_avoid_8 </a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 add_avoid_8
 def add_avoid_8(start, end):
  # 初始化總和為 0，準備來累加符合條件的數字
@@ -696,7 +697,10 @@ def add_avoid_8(start, end):
 result = add_avoid_8(1, 100)
 print("從 1 累加到 100 且避開包含 '8' 的數字的總和是:", result)
 </pre>
-<p><strong>結果為: </strong>從 1 累加到 100 且避開包含 '8' 的數字的總和是: 3763<img alt="cool" src="/static/tinymce4/tinymce/plugins/emoticons/img/smiley-cool.gif"/><br/><br/><br/><br/></p>
+<p><strong>結果為: </strong>從 1 累加到 100 且避開包含 '8' 的數字的總和是: 3763<img alt="cool" src="/static/tinymce4/tinymce/plugins/emoticons/img/smiley-cool.gif"/><br/><br/>隨堂:</p>
+<p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/74ac586cfb6c8d2d632989126cf0719f/raw/a6ab01fbf1bcaf13d8857378106242ef75c68a49/w15.5.py">1~100不包含8和3</a></p>
+<p># 定義函式 add_avoid_8_and_3<br/>def add_avoid_8_and_3(start, end):<br/> # 初始化總和為 0，準備來累加符合條件的數字<br/> total_sum = 0<br/> <br/> # 用迴圈遍歷從 start 到 end 的每個數字<br/> for i in range(start, end + 1):<br/> # 檢查這個數字是否包含數字 "8" 或 "3"<br/> if '8' not in str(i) and '3' not in str(i): # 把數字轉成字串，檢查是否包含 '8' 或 '3'<br/> # 如果沒有 '8' 和 '3'，就把這個數字加到總和裡<br/> total_sum += i<br/> <br/> # 最後回傳累加的總和<br/> return total_sum</p>
+<p># 呼叫函式 add_avoid_8_and_3，並顯示結果<br/>result = add_avoid_8_and_3(1, 100)<br/>print("從 1 累加到 100 且避開包含 '8' 或 '3' 的數字的總和是:", result)</p>
 <p><span face="monospace" style="font-family: monospace; background-color: #999999; color: #ffffff;"></span></p><h1>HW 2</h1>
 <p><br/>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span> <br/>        Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
