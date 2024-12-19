@@ -608,17 +608,82 @@ print("從 1 累加到 100 的總和是:", total_sum)</pre>
 for i in range(1, 101):
 total_sum += i</pre>
 <p><strong>A:</strong></p>
-<p style="text-align: justify;"><strong>把 &lt;for i in range(1, 101): &gt;分開介紹</strong></p>
-<p style="text-align: justify;">for i 表示使用一個變數 <code>i</code> 來代表每一次循環中的當前數字。</p>
-<p style="text-align: justify;">in range(1, 101):</p>
-<ol style="text-align: justify;">
+<p><strong>把 &lt;for i in range(1, 101): &gt;分開介紹</strong></p>
+<ul>
+<li style="text-align: justify;">for i 表示使用一個變數 <code>i</code> 來代表每一次循環中的當前數字。</li>
+<li style="text-align: justify;">in range(1, 101):</li>
+</ul>
+<ol style="text-align: justify; list-style-type: lower-roman;">
 <li><code>range(1, 101)</code> 是一個生成數字的範圍，表示從 1 開始，到 100 結束。這段語法會創建一個數字序列，包含從 1 到 100 的所有整數。</li>
 <li><span style="color: #ff0000;">注意，<code>range()</code> 的第二個參數 <code>101</code> 是「不包含」的，所以它不會包括 101 這個數字。</span></li>
 </ol>
-<p style="text-align: justify;"><span color="#ff0000">冒號則表示開始</span><span color="#ff0000">執行循環體內的程式碼。</span></p>
+<ul>
+<li style="text-align: justify;"><span color="#ff0000">冒號則表示開始</span><span color="#ff0000">執行循環體內的程式碼。</span></li>
+</ul>
 <p style="text-align: justify;"><strong><span color="#ff0000">&lt;total_sum += i &gt;的意思</span></strong></p>
-<p style="text-align: justify;"><span color="#ff0000">把變數 <code>i</code> 的值加到 <code>total_sum</code> 裡，然後把結果再存回 <code>total_sum。total_sum 是 total_sum + i 的縮寫。</code></span></p>
-<p style="text-align: justify;"><span face="monospace" style="font-family: monospace; background-color: #999999; color: #ffffff;">!!! 所以在for i in range(1, 101)的迴圈中 1+2+...+100 後再存進 total_sum 裡面。!!!</span></p><h1>HW 2</h1>
+<ul>
+<li style="text-align: justify;"><span color="#ff0000">把變數 <code>i</code> 的值加到 <code>total_sum</code> 裡，然後把結果再存回 <code>total_sum。total_sum 是 total_sum + i 的縮寫。</code></span></li>
+</ul>
+<p><span face="monospace" style="font-family: monospace; background-color: #999999; color: #ffffff;">!!! 所以在for i in range(1, 101)的迴圈中 1+2+...+100 後再存進 total_sum 裡面。!!!</span></p>
+<p><span face="monospace" style="font-family: monospace;">第二題:</span></p>
+<p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/74ac586cfb6c8d2d632989126cf0719f/raw/162a129f299f53b30ebd95ed96b61b20b5dceb72/w15.2.py">addto</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 addto
+def addto(start, end):
+# 初始化總和為 0
+total_sum = 0
+
+# 使用 for 迴圈從 start 累加到 end
+for i in range(start, end + 1):
+total_sum += i
+
+# 返回累加的總和
+return total_sum
+
+# 呼叫函式並顯示結果
+result = addto(1, 100)
+print("從 1 累加到 100 的總和是:", result)</pre>
+<p>第三題:</p>
+<p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/74ac586cfb6c8d2d632989126cf0719f/raw/00b42998152735e186b901656b30d4088accc196/w15.3.py">add_only_even </a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 add_only_even
+def add_only_even(start, end):
+    # 初始化總和為 0，準備來累加偶數
+    total_sum = 0
+   
+    # 用迴圈遍歷從 start 到 end 的每個數字
+    for i in range(start, end + 1):
+        # 檢查這個數字是否是偶數
+        if i % 2 == 0:
+            # 如果是偶數，就把它加到總和裡
+            total_sum += i
+   
+    # 最後回傳累加的偶數總和
+    return total_sum
+
+# 呼叫函式 add_only_even，並顯示結果
+result = add_only_even(1, 100)
+print("從 1 累加到 100 的偶數總和是:", result)</pre>
+<pre>第四題:<br/><br/><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/74ac586cfb6c8d2d632989126cf0719f/raw/15f86eb3113fed7db558b845016ed8ca8f23cd08/w15.4.py">add_avoid_8 </a></pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 add_avoid_8
+def add_avoid_8(start, end):
+ # 初始化總和為 0，準備來累加符合條件的數字
+ total_sum = 0
+ 
+ # 用迴圈遍歷從 start 到 end 的每個數字
+ for i in range(start, end + 1):
+ # 檢查這個數字是否包含數字 "8"
+ if '8' not in str(i): # 把數字轉成字串，檢查是否包含 '8'
+ # 如果沒有 '8'，就把這個數字加到總和裡
+ total_sum += i
+ 
+ # 最後回傳累加的總和
+ return total_sum
+
+# 呼叫函式 add_avoid_8，並顯示結果
+result = add_avoid_8(1, 100)
+print("從 1 累加到 100 且避開包含 '8' 的數字的總和是:", result)
+</pre>
+<pre><br/><br/><br/><br/></pre>
+<p><span face="monospace" style="font-family: monospace; background-color: #999999; color: #ffffff;"></span></p><h1>HW 2</h1>
 <p><br/>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span> <br/>        Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
 <p>延續 HW 1 網頁資料整理與程式練習方法, 整理下列內容 (20%):PART 2: Introduction to lists and if/else statementsPART 3: Introduction to the for loop完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p>
