@@ -142,7 +142,125 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='w16_exam2.html'>Next</a> >> w16_exam2<br /><h1>w16_exam1</h1>
-<br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='w16_exam2.html'>Next</a> >> w16_exam2</div>
+<p>Brython Example</p>
+<!-- 加載 Brython 庫 -->
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+<!-- 啟動 Brython -->
+<script>
+window.onload = function() {
+            brython({debug: 1, pythonpath: ['/static/', './../downloads/py/']});  // 設定 Brython 並加載指定路徑
+        }
+</script>
+<!-- 這個 div 用來顯示 Brython 的繪圖內容 -->
+<div id="brython_div1"></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/6a81d975eba042f20bb81040a42282bc/raw/a11a69d6db8a1fc0835a6b59b3daf04546742afe/16.1.py">exam1的程式碼</a></div>
+<div><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/BvFbmeEy0KQ?si=f9ivJb6mveI-LcA3" title="YouTube video player" width="560"></iframe></div>
+<!-- 在此處放置 Python 代碼 -->
+<script type="text/python">
+from browser import html
+from browser import document as doc
+
+# 創建畫布並插入到指定的 div 元素中
+canvas = html.CANVAS(width=2000, height=150)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 2
+ctx.strokeStyle = "black"
+
+# 設定原點座標 (31, 04)
+x, y = 31, 4
+
+# 繪製 X 軸與 Y 軸
+ctx.beginPath()
+ctx.moveTo(x, y)
+ctx.lineTo(88, y)  # X 軸
+ctx.stroke()
+
+ctx.beginPath()
+ctx.moveTo(x, y)
+ctx.lineTo(x, 95)  # Y 軸
+ctx.stroke()
+
+# 標註文字 (避免與線重疊)
+ctx.font = "20px Arial"
+ctx.fillStyle = "black"
+ctx.fillText("+X", 90, 25)  # 向右移動文字
+ctx.fillText("+Y", 20, 120)  # 向下移動文字
+
+# 標註原點
+ctx.font = "12px Arial"
+ctx.fillText(f"({x}, {y})", 40, 20)  # 向右移動文字
+
+# 繪製粉紅色六邊形
+def draw_hexagon(x, y):
+    ctx.beginPath()
+    ctx.fillStyle = "#FF69B4"  # 粉紅色
+    ctx.moveTo(x + 40, y + 70)
+    ctx.lineTo(x + 60, y + 40)
+    ctx.lineTo(x + 90, y + 40)
+    ctx.lineTo(x + 110, y + 70)
+    ctx.lineTo(x + 90, y + 100)
+    ctx.lineTo(x + 60, y + 100)
+    ctx.closePath()
+    ctx.fill()
+
+# 繪製紫色菱形
+def draw_diamond(x, y):
+    ctx.beginPath()
+    ctx.fillStyle = "#800080"  # 紫色
+    ctx.moveTo(x + 130, y + 70)
+    ctx.lineTo(x + 150, y + 40)
+    ctx.lineTo(x + 170, y + 70)
+    ctx.lineTo(x + 150, y + 100)
+    ctx.closePath()
+    ctx.fill()
+
+# 繪製黃色三角形
+def draw_triangle(x, y):
+    ctx.beginPath()
+    ctx.fillStyle = "#FFFF00"  # 黃色
+    ctx.moveTo(x + 174, y + 70)  # 頂點
+    ctx.lineTo(x + 154, y + 100)  # 左下角
+    ctx.lineTo(x + 194, y + 100)  # 右下角
+    ctx.closePath()
+    ctx.fill()
+
+# 繪製藍色圓形
+def draw_circle(x, y):
+    ctx.beginPath()
+    ctx.fillStyle = "#0000FF"  # 藍色
+    ctx.arc(x + 220, y + 70, 20, 0, 2 * 3.14159)
+    ctx.fill()
+
+# 繪製紅色正方形
+def draw_square(x, y):
+    ctx.beginPath()
+    ctx.fillStyle = "#FF0000"  # 紅色
+    ctx.rect(x + 260, y + 43, 40, 40)
+    ctx.fill()
+
+# 繪製綠色矩形
+def draw_rectangle(x, y):
+    ctx.beginPath()
+    ctx.fillStyle = "#008000"  # 綠色
+    ctx.rect(x + 320, y + 53, 60, 20)
+    ctx.fill()
+
+# 調用各個繪圖函數
+draw_hexagon(x, y)
+draw_diamond(x, y)
+draw_triangle(x, y)
+draw_circle(x, y)
+draw_square(x, y)
+draw_rectangle(x, y)
+</script><br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='w16_exam2.html'>Next</a> >> w16_exam2</div>
         
     <!-- footer -->
       <div class="container">
