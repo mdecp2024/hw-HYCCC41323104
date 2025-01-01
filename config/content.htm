@@ -499,7 +499,8 @@ ctx.stroke()
 <ul>
 <li>這一行加載了  Brython 的核心庫<strong><span> </span></strong>(<code>brython_stdlib.js</code>)，它包含了一些常見的 Python 標準庫（如 <code>math</code>, <code>random</code>, <code>os</code> 等），使得你可以在瀏覽器中使用這些 Python 模組。</li>
 <li>路徑和上面相同，指向的是存放 <code>brython_stdlib.js</code> 的位置。</li>
-</ul><h3>w14_hw</h3>
+</ul>
+<h3>w14_hw</h3>
 <p><span>請根據兩個圓繪圖所圍成的</span><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5eca62565d509668d731720f1994e127/raw/0e370b2ad0c429ab4c8905244022c27cfca8cfba/two_cicle_fill_ex1.py">區域</a><span>(目前圍成三個區域, 但若圓心移動可能彼此獨立)進行不同顏色著色, 條件是當各圓半徑與圓心座標變動時, 程式只需輸入兩個圓的圓心座標與半徑, 就可以完成各區域的著色任務.</span><span>請根據此老師給得程式架構, 修改為三個圓的區域塗色任務.</span></p>
 <p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/e8292567b0a9bd3b42a72fcf6e7ecde9/raw/040cd170b6c7b07b00d98eb07025876b2a31bdfd/w14.1.py">三個圓</a></p>
 <p>程式:</p>
@@ -844,7 +845,17 @@ draw_triangle(x, y)
 draw_circle(x, y)
 draw_square(x, y)
 draw_rectangle(x, y)
-</script><h3>w16_exam2</h3>
+</script>
+<h1>HW 3</h1>
+<p>主題: Python 的數字、演算法與迴圈 (20%)</p>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><br/>        Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</div>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"></div>
+<h2>HW 3 Exam</h2>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"></div>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">每六人為一組進行協同程式練習</div>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"></div>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</div>
+<h3>w16_exam2</h3>
 <p>Brython Example</p>
 <!-- 加載 Brython 庫 -->
 <script src="/static/brython.js"></script>
@@ -886,60 +897,45 @@ ctx.fillText("(31,4)", 31+ 120, 4+ 15)
 blue_start_x = 31
 blue_start_y = 4
 
-# 縮小藍色線條圖形比例
-scale = 2
-# 定義繪製藍色矩形的函數，外圍座標固定為 (31, 4)，並調整線條數字
-def draw_blue_rectangles(x, y):
-    # 繪製外圍矩形，根據新的座標設定來改變長度
-    draw_line(x + 150, y + 40, x + 190, y + 40, stroke_style="blue")  # 調整長度
-    draw_line(x + 210, y + 40, x + 250, y + 40, stroke_style="blue")
-    draw_line(x + 250, y + 40, x + 250, y + 140, stroke_style="blue")
-    draw_line(x + 250, y + 140, x + 210, y + 140, stroke_style="blue")
-    draw_line(x + 190, y + 140, x + 150, y + 140, stroke_style="blue")
-    draw_line(x + 150, y + 140, x + 150, y + 40, stroke_style="blue")
+def draw_blue_rectangles(x, y, scale):
+    # 外圍矩形
+    draw_line(x + 150 * scale, y + 40 * scale, x + 190 * scale, y + 40 * scale, stroke_style="blue")
+    draw_line(x + 210 * scale, y + 40 * scale, x + 250 * scale, y + 40 * scale, stroke_style="blue")
+    draw_line(x + 250 * scale, y + 40 * scale, x + 250 * scale, y + 140 * scale, stroke_style="blue")
+    draw_line(x + 250 * scale, y + 140 * scale, x + 210 * scale, y + 140 * scale, stroke_style="blue")
+    draw_line(x + 190 * scale, y + 140 * scale, x + 150 * scale, y + 140 * scale, stroke_style="blue")
+    draw_line(x + 150 * scale, y + 140 * scale, x + 150 * scale, y + 40 * scale, stroke_style="blue")
 
-    # 繪製內部矩形的線條
-    draw_line(x + 170, y + 60, x + 230, y + 60, stroke_style="blue")
-    draw_line(x + 230, y + 60, x + 230, y + 80, stroke_style="blue")
-    draw_line(x + 190, y + 60, x + 190, y + 80, stroke_style="blue")
-    draw_line(x + 190, y + 80, x + 150, y + 80, stroke_style="blue")
-    draw_line(x + 210, y + 80, x + 210, y + 100, stroke_style="blue")
-    draw_line(x + 210, y + 100, x + 230, y + 100, stroke_style="blue")
-    draw_line(x + 230, y + 100, x + 230, y + 140, stroke_style="blue")
-    draw_line(x + 190, y + 80, x + 170, y + 80, stroke_style="blue")
-    draw_line(x + 170, y + 120, x + 170, y + 100, stroke_style="blue")
-    draw_line(x + 170, y + 100, x + 210, y + 100, stroke_style="blue")
-    draw_line(x + 190, y + 140, x + 190, y + 120, stroke_style="blue")
-    draw_line(x + 190, y + 120, x + 210, y + 120, stroke_style="blue")
-
-# 使用該函數繪製藍色矩形，外圍的座標設為 (31, 4)
+    # 內部矩形
+    draw_line(x + 170 * scale, y + 60 * scale, x + 230 * scale, y + 60 * scale, stroke_style="blue")
+    draw_line(x + 230 * scale, y + 60 * scale, x + 230 * scale, y + 80 * scale, stroke_style="blue")
+    draw_line(x + 190 * scale, y + 60 * scale, x + 190 * scale, y + 80 * scale, stroke_style="blue")
+    draw_line(x + 190 * scale, y + 80 * scale, x + 150 * scale, y + 80 * scale, stroke_style="blue")
+    draw_line(x + 210 * scale, y + 80 * scale, x + 210 * scale, y + 100 * scale, stroke_style="blue")
+    draw_line(x + 210 * scale, y + 100 * scale, x + 230 * scale, y + 100 * scale, stroke_style="blue")
+    draw_line(x + 230 * scale, y + 100 * scale, x + 230 * scale, y + 140 * scale, stroke_style="blue")
+    draw_line(x + 190 * scale, y + 80 * scale, x + 170 * scale, y + 80 * scale, stroke_style="blue")
+    draw_line(x + 170 * scale, y + 120 * scale, x + 170 * scale, y + 100 * scale, stroke_style="blue")
+    draw_line(x + 170 * scale, y + 100 * scale, x + 210 * scale, y + 100 * scale, stroke_style="blue")
+    draw_line(x + 190 * scale, y + 140 * scale, x + 190 * scale, y + 120 * scale, stroke_style="blue")
+    draw_line(x + 190 * scale, y + 120 * scale, x + 210 * scale, y + 120 * scale, stroke_style="blue")
 blue_start_x = 31
 blue_start_y = 4
-draw_blue_rectangles(blue_start_x, blue_start_y)
+scale = 1 # 你可以更改這個數字來調整縮放比例
+draw_blue_rectangles(blue_start_x, blue_start_y, scale)
 </script>
 <p><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/6a81d975eba042f20bb81040a42282bc/raw/a479f6520c0f9e967c19c165a8da6fbc60f5ad45/w16.2.py">w16.exam2程式</a></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/_zoUGG2H6kA?si=iCCML5auVzL-miVF" title="YouTube video player" width="560"></iframe></p>
-<div id="gtx-trans" style="position: absolute; left: -15px; top: 105.525px;">
-<div class="gtx-trans-icon"></div>
-</div><h3>w16_exam3</h3>
-<h1>HW 3</h1>
-<p>主題: Python 的數字、演算法與迴圈 (20%)</p>
-<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><br/>        Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</div>
-<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"></div>
-<h3>HW 3 Exam</h3>
-<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"></div>
-<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">每六人為一組進行協同程式練習</div>
-<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"></div>
-<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</div>
 <h1>HW 4</h1>
 <p>主題: 利用 Python 控制機電模擬系統 (20%)<br/>        利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件 <br/>        利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統 <br/>        利用 <a href="https://manual.coppeliarobotics.com/en/zmqRemoteApiOverview.htm">Python</a> 跨網路控制瀏覽器上的機電模擬系統</p>
 <p>        範例:</p>
 <p>             <a href="/downloads/cd2023_pj3ag4_zmq_football_4.7.7z">cd2023_pj3ag4_zmq_football_4.7.7z</a></p>
 <p>             <a href="https://localhost:9446/downloads/cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z">cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z</a></p>
 <p>完成上述流程整理後, 請將 HW4 自評分數輸入 cp2024 自評表單中.</p>
-<h3>HW 4 Exam</h3>
+<h2>HW 4 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<h3>w16_exam3</h3>
 <h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"></div>
