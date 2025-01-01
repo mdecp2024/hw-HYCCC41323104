@@ -142,7 +142,92 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report<br /><h1>w16_exam3</h1>
-<br />HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report</div>
+<p>Brython Example</p>
+<!-- 加載 Brython 庫 -->
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+<!-- 啟動 Brython -->
+<script>
+window.onload = function() {
+            brython({debug: 1, pythonpath: ['/static/', './../downloads/py/']});  // 設定 Brython 並加載指定路徑
+        }
+</script>
+<!-- 這個 div 用來顯示 Brython 的繪圖內容 -->
+<div id="brython_div1"><a href="https://mdecp2024.github.io/hw-HYCCC41323104/content/Brython.html?src=https://gist.githubusercontent.com/HYCCC41323104/6a81d975eba042f20bb81040a42282bc/raw/ad39df19897607903bbeb947f64a693d3e1391d2/w16.3.py">w16_exam3程式</a></div>
+<div>123</div>
+<!-- 在此處放置 Python 代碼 -->
+<script type="text/python">
+from browser import html
+from browser import document as doc
+
+# 設定畫布尺寸
+canvas = html.CANVAS(width=500, height=150)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+
+# 畫線的工具函數，設定線條顏色和粗細，然後畫出一條直線
+def draw_line(x1, y1, x2, y2, line_width=2, stroke_style="black"):
+    ctx.lineWidth = line_width
+    ctx.strokeStyle = stroke_style
+    ctx.beginPath()
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.stroke()
+
+# 在藍線左邊第一條和上面第一條附近標記文字
+ctx.font = "20px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(31,4)", 31 + 120, 4 + 15)
+
+# 繪製黑色多條線條，左上角從(31, 4)開始
+blue_start_x = 31
+blue_start_y = 4
+
+def draw_black_rectangles(x, y, scale):
+    # 外圍矩形
+    draw_line(x + 150 * scale, y + 40 * scale, x + 190 * scale, y + 40 * scale, stroke_style="black")
+    draw_line(x + 210 * scale, y + 40 * scale, x + 250 * scale, y + 40 * scale, stroke_style="black")
+    draw_line(x + 250 * scale, y + 40 * scale, x + 250 * scale, y + 140 * scale, stroke_style="black")
+    draw_line(x + 250 * scale, y + 140 * scale, x + 210 * scale, y + 140 * scale, stroke_style="black")
+    draw_line(x + 190 * scale, y + 140 * scale, x + 150 * scale, y + 140 * scale, stroke_style="black")
+    draw_line(x + 150 * scale, y + 140 * scale, x + 150 * scale, y + 40 * scale, stroke_style="black")
+
+    # 內部矩形
+    draw_line(x + 170 * scale, y + 60 * scale, x + 230 * scale, y + 60 * scale, stroke_style="black")
+    draw_line(x + 230 * scale, y + 60 * scale, x + 230 * scale, y + 80 * scale, stroke_style="black")
+    draw_line(x + 190 * scale, y + 60 * scale, x + 190 * scale, y + 80 * scale, stroke_style="black")
+    draw_line(x + 190 * scale, y + 80 * scale, x + 150 * scale, y + 80 * scale, stroke_style="black")
+    draw_line(x + 210 * scale, y + 80 * scale, x + 210 * scale, y + 100 * scale, stroke_style="black")
+    draw_line(x + 210 * scale, y + 100 * scale, x + 230 * scale, y + 100 * scale, stroke_style="black")
+    draw_line(x + 230 * scale, y + 100 * scale, x + 230 * scale, y + 140 * scale, stroke_style="black")
+    draw_line(x + 190 * scale, y + 80 * scale, x + 170 * scale, y + 80 * scale, stroke_style="black")
+    draw_line(x + 170 * scale, y + 120 * scale, x + 170 * scale, y + 100 * scale, stroke_style="black")
+    draw_line(x + 170 * scale, y + 100 * scale, x + 210 * scale, y + 100 * scale, stroke_style="black")
+    draw_line(x + 190 * scale, y + 140 * scale, x + 190 * scale, y + 120 * scale, stroke_style="black")
+    draw_line(x + 190 * scale, y + 120 * scale, x + 210 * scale, y + 120 * scale, stroke_style="black")
+# 使用該函數繪製黑色矩形
+scale = 1  # 你可以更改這個數字來調整縮放比例
+draw_black_rectangles(blue_start_x, blue_start_y, scale)
+
+# 繪製紅色路徑，將所有 X 坐標增加 46，Y 坐標減少 84
+draw_line(180 + 46, 130 - 84, 180 + 46, 140 - 84, stroke_style="red")  # 直線 1
+draw_line(180 + 46, 140 - 84, 220 + 46, 140 - 84, stroke_style="red")  # 直線 2
+draw_line(220 + 46, 140 - 84, 220 + 46, 180 - 84, stroke_style="red")  # 直線 3
+draw_line(220 + 46, 180 - 84, 200 + 46, 180 - 84, stroke_style="red")  # 直線 4
+draw_line(200 + 46, 180 - 84, 200 + 46, 160 - 84, stroke_style="red")  # 直線 5
+draw_line(200 + 46, 160 - 84, 180 + 46, 160 - 84, stroke_style="red")  # 直線 6
+draw_line(180 + 46, 160 - 84, 180 + 46, 180 - 84, stroke_style="red")  # 直線 7
+draw_line(180 + 46, 180 - 84, 140 + 46, 180 - 84, stroke_style="red")  # 直線 8
+draw_line(140 + 46, 180 - 84, 140 + 46, 220 - 84, stroke_style="red")  # 直線 9
+draw_line(140 + 46, 220 - 84, 160 + 46, 220 - 84, stroke_style="red")  # 直線 10
+draw_line(160 + 46, 220 - 84, 160 + 46, 200 - 84, stroke_style="red")  # 直線 11
+draw_line(160 + 46, 200 - 84, 200 + 46, 200 - 84, stroke_style="red")  # 直線 12
+draw_line(200 + 46, 200 - 84, 200 + 46, 220 - 84, stroke_style="red")  # 直線 13
+draw_line(200 + 46, 220 - 84, 180 + 46, 220 - 84, stroke_style="red")  # 直線 14
+draw_line(180 + 46, 220 - 84, 180 + 46, 230 - 84, stroke_style="red")  # 直線 15
+</script><br />HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report</div>
         
     <!-- footer -->
       <div class="container">
